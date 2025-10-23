@@ -9,5 +9,6 @@ COPY artalk.yml /data/artalk.yml
 # Expose Artalk port
 EXPOSE 23366
 
-# Start Artalk server
-CMD ["artalk", "server"]
+# Override entrypoint and set command
+ENTRYPOINT []
+CMD ["sh", "-c", "cd /app && ./artalk server"]
