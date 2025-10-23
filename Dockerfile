@@ -10,4 +10,4 @@ COPY artalk.yml /data/artalk.yml
 EXPOSE 23366
 
 # Start Artalk server
-CMD ["./artalk", "server"]
+CMD ["artalk", "server"]
