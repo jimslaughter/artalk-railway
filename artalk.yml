@@ -1,0 +1,96 @@
+# Artalk Configuration File
+# This file is pre-configured for PostgreSQL on Railway
+
+# Application Settings
+app_key: "your_random_key_here_change_this"
+debug: false
+locale: "en"
+timezone: "America/Los_Angeles"
+
+# Server Settings
+host: "0.0.0.0"
+port: 23366
+
+# Site Configuration
+site_default: "gemsite"
+
+# Database Configuration - PostgreSQL
+db:
+  type: "pgsql"
+  name: "railway"
+  host: "postgres.railway.internal"
+  port: 5432
+  user: "postgres"
+  password: "lsTlitxbqhmAsIrYabwmOecJSGAYZFYc"
+  charset: "utf8mb4"
+  table_prefix: "atk_"
+  ssl: false
+
+# Admin Users
+admin_users:
+  - name: "admin"
+    email: "jimslaughter@gmail.com"
+    password: "Wjs56law!"
+    badge_name: "Admin"
+    badge_color: ""
+
+# Email Configuration (disabled - Railway free tier blocks SMTP)
+email:
+  enabled: false
+  send_type: "smtp"
+  send_name: "gemsite"
+  send_addr: "jimslaughter@gmail.com"
+  mail_subject_to_admin: "[{{site_name}}] New comment from {{reply_nick}}"
+  mail_subject_to_reply: "[{{site_name}}] You got a reply from {{reply_nick}}"
+  mail_tpl: default
+  smtp:
+    host: "smtp.resend.com"
+    port: 587
+    username: "resend"
+    password: "re_Wqvi1DGw_4azsFjTnHQ2qVT7LKGGLaWFV"
+
+# Telegram Notifications
+admin_notify:
+  notify_tpl: default
+  notify_pending: false
+  notify_all_admins: true
+  telegram:
+    enabled: true
+    api_token: "8032022351:AAGhihvojiwS_WmaZDnASocW91TXPY6X1Bg"
+    receivers:
+      - 8354061342
+
+# Captcha (disabled for easier testing)
+captcha:
+  enabled: false
+
+# Security Settings
+moderator:
+  pending_default: false
+  api_fail_block: false
+  akismet_key: ""
+  
+# Cache
+cache:
+  enabled: true
+  type: "builtin"
+  expires: 30
+  warm_up: false
+  server: ""
+
+# SSL/TLS
+ssl:
+  enabled: false
+  cert_path: ""
+  key_path: ""
+
+# Log
+log:
+  enabled: true
+  filename: "./data/artalk.log"
+
+# Frontend
+frontend:
+  placeholder_conf:
+    search: ""
+    editor: ""
